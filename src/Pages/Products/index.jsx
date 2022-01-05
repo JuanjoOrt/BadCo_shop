@@ -1,9 +1,8 @@
 
-export default function Products(){
-
-    return (
-        <div>
-            Products
-        </div>
-    )
+export default function Products () {
+  return (
+      <div>
+          Products
+      </div>
+  )
 }
