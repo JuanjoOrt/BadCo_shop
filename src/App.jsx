@@ -1,5 +1,3 @@
-import GlobalContext from './Context/Context'
-import { useContext } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
 import About from './Pages/About'
@@ -7,10 +5,15 @@ import Detail from './Pages/Detail'
 import Login from './Pages/Login'
 import Products from './Pages/Products'
 import NotFound from './Pages/NotFound'
+import { useContext, useEffect } from 'react'
+import GlobalContext from './Context/Context'
 
 function App () {
-  const test = useContext(GlobalContext)
-  console.log(test)
+  const { setUser } = useContext(GlobalContext)
+
+  useEffect(() => {
+    setUser('Usuario de prueba')
+  }, [])
 
   return (
 		<Routes>
