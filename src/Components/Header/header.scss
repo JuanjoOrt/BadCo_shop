@@ -2,10 +2,18 @@
 .header{
   height: 100px;
   width: 100%;
-  position: fixed;
+  z-index: 999;
   display: flex;
   align-items: center;
   top: 0;
+
+  &-absolute{
+    position: absolute;
+  }
+
+  &-sticky{
+    position: sticky;
+  }
 
   &-logo{
     width: 8rem;
