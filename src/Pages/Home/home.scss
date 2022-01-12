@@ -6,6 +6,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
+    position: fixed;
   }
 
   &-image{
@@ -45,6 +46,7 @@
       font-size: 40vw;
       left: -5px;
       bottom: 38%;
+      position: fixed;
     }
     &-image{
       width: 55%;
