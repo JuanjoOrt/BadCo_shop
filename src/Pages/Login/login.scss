@@ -1,0 +1,97 @@
+.login{
+
+  &-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+
+  &-left{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 6rem;
+    box-sizing: border-box;
+  }
+
+  &-right{
+    background: #BDDDF4;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  &-image{
+    width: 80%;
+    bottom: 0;
+  }
+
+  &-title{
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+  }
+
+  &-description{
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 22px;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  &-button{
+    min-width: 18rem;
+    width: 18rem;
+    margin: .5rem 0;
+    height: 2.5rem;
+    border: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 14px;
+
+    img{
+      width: 1.8rem;
+    }
+
+    &-icon{
+      font-size: 2rem;
+    }
+
+    span{
+      width: 100%;
+    }
+
+    &.facebook{
+      background: #3B5998;
+      color: white;
+    }
+
+    &.google{
+      background: #4285F4;
+      color: white;
+    }
+
+    &:hover{
+      box-shadow: 0 0 56px -29px rgba(0,0,0,1);
+    }
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .login {
+    &-right{display: none}
+    &-left{
+      width: 100%;
+      display: block;
+      height: 80%;
+      margin-top: 100px;
+      padding: 0 1rem;
+    }
+  }
+}

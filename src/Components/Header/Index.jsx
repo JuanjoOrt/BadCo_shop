@@ -19,7 +19,7 @@ export default function Header ({ sticky = false }) {
               <input type="text" className='header-input' placeholder='Type Search Here'/>
               <FiSearch className='header-input-icon'/>
             </li>
-            <li className='header-desktop__item-right'>Login</li>
+            <Link to='/login'><li className='header-desktop__item-right'>Login</li></Link>
             <li className='header-desktop__item-right'>
               <FiShoppingCart className='header-cart'/>
             </li>
