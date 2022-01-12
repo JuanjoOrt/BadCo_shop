@@ -1,0 +1,85 @@
+
+.sidebar{
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: #2B2B2B;
+  transition: all .2s;
+
+  &-visible{
+    left: 0;
+  }
+
+  &-no-visible{
+    left: 100%
+  }
+
+  &-header{
+    margin: 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+      font-size: 24px;
+      font-family: 'Anton', sans-serif;
+      color: white;
+    }
+
+    &__icon{
+      color: white;
+      font-size: 45px;
+    }
+  }
+
+  &-body{
+    color: white;
+    margin: 2.5rem 1.5rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-item{
+    margin: 1.5rem 0;
+    font-family: 'Roboto-Regular', sans-serif;
+    font-size: 20px;
+  }
+
+  &-input{
+    background: transparent;
+    font-size: 20px;
+    font-family: 'Roboto-Regular', sans-serif;
+    border: 0;
+    border-bottom: 2px solid #ffffff;
+    width: 100%;
+    color: white;
+
+    &::placeholder{
+      color: #efefef;
+    }
+
+    &-container{
+      position: relative;
+      width: 14rem;
+    }
+
+    &-icon{
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 22px;
+      color: white;
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &-link{
+    color: white;
+  }
+}
