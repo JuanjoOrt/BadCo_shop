@@ -1,8 +1,15 @@
 import './home.scss'
 import WomanImage from '../../styles/assets/home-woman-model.webp'
 import Layout from '../../Components/Layout'
+import { useEffect } from 'react'
 
 export default function Home () {
+
+  useEffect(() => {
+    document.body.style.background = '#978DD0'
+    return () => { document.body.style.background = '#fff' }
+  }, [])
+
   return (
     <Layout>
       <div className='home-container'>
