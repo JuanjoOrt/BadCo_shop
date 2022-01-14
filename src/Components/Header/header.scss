@@ -27,6 +27,12 @@
     display: flex;
   }
 
+  &-loading{
+    animation: spin 2s linear infinite;
+    font-size: 24px;
+  }
+
+
   &-desktop{
     display: flex;
     align-items: center;
@@ -88,6 +94,13 @@
 
   &-menu{
     font-size: 28px;
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 

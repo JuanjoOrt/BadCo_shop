@@ -6,16 +6,8 @@ import Detail from './Pages/Detail'
 import Login from './Pages/Login'
 import Products from './Pages/Products'
 import NotFound from './Pages/NotFound'
-import { useContext, useEffect } from 'react'
-import GlobalContext from './Context/Context'
 
 function App () {
-  const { setUser } = useContext(GlobalContext)
-
-  useEffect(() => {
-    setUser('Usuario de prueba')
-  }, [])
-
   return (
 		<Routes>
 			<Route path="/" element={<Home />} />

@@ -2,9 +2,11 @@ import './sidebar.scss'
 import { IoCloseSharp } from 'react-icons/io5'
 import { FiSearch } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
+import { useLogin } from '../../Hooks/useLogin'
 
 export default function SideBar ({ visible, closeMenu }) {
   const visibleClass = visible ? 'sidebar-visible' : 'sidebar-no-visible'
+  const { signIn } = useLogin()
 
   return (
     <div className={`sidebar ${visibleClass}`}>
@@ -22,7 +24,7 @@ export default function SideBar ({ visible, closeMenu }) {
             <input type="text" className='sidebar-input' placeholder='Type Search Here'/>
             <FiSearch className='sidebar-input-icon'/>
           </div>
-          <div className="sidebar-item"><Link to='/login' className='sidebar-link'>Login</Link></div>
+          <div className="sidebar-item cursor" onClick={signIn}>Login</div>
         </div>
       </div>
     </div>

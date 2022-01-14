@@ -1,12 +1,17 @@
 import './header.scss'
 import { FiShoppingCart, FiSearch } from 'react-icons/fi'
 import { IoMenuOutline } from 'react-icons/io5'
+import GlobalContext from '../../Context/Context'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import SideBar from '../SideBar'
+import { AiOutlineLoading } from 'react-icons/ai'
+import { useLogin } from '../../Hooks/useLogin'
 
 export default function Header ({ sticky = false }) {
+  const { user } = useContext(GlobalContext)
   const [showSideBar, setShowSideBar] = useState(false)
+  const { signIn, loaded } = useLogin()
 
   return (
     <>
@@ -25,7 +30,15 @@ export default function Header ({ sticky = false }) {
                 <input type="text" className='header-input' placeholder='Type Search Here'/>
                 <FiSearch className='header-input-icon'/>
               </li>
-              <Link to='/login'><li className='header-desktop__item-right'>Login</li></Link>
+              <li className='header-desktop__item-right'>
+                {
+                  loaded
+                    ? user
+                      ? <div>{user.profileObj.name}</div>
+                      : <div onClick={signIn} className='cursor'>Login</div>
+                    : <AiOutlineLoading className='header-loading'/>
+                }
+              </li>
               <li className='header-desktop__item-right'>
                 <FiShoppingCart className='header-cart'/>
               </li>
