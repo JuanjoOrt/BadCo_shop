@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import { GlobalContextProvider } from './Context/Context'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()
 
 const composeProviders = (...providers) => ({ children }) => {
   return providers.reduceRight(
@@ -19,7 +22,9 @@ const Providers = composeProviders(
 ReactDOM.render(
   <React.StrictMode>
     <Providers>
-      <App />
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
     </Providers>
   </React.StrictMode>,
   document.getElementById('root')

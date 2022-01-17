@@ -22,7 +22,7 @@ export default function Header ({ sticky = false }) {
           </div>
           <div className='header-desktop'>
             <ul className='header-desktop__list'>
-              <li className='header-desktop__item-left'>Products</li>
+              <Link to='/products'><li className='header-desktop__item-left'>Products</li></Link>
               <Link to='/about'><li className='header-desktop__item-left'>About</li></Link>
             </ul>
             <ul className='header-desktop__list'>
@@ -34,7 +34,7 @@ export default function Header ({ sticky = false }) {
                 {
                   loaded
                     ? user
-                      ? <div>{user.profileObj.name}</div>
+                      ? <Link to='/'><div>{user.profileObj.name}</div></Link>
                       : <div onClick={signIn} className='cursor'>Login</div>
                     : <AiOutlineLoading className='header-loading'/>
                 }

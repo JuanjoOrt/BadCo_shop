@@ -1,0 +1,59 @@
+
+.products{
+
+  &-container{
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-loading {
+    font-size: 3rem;
+    color: #2d2d5d;
+    animation: spin 1s linear infinite;
+  }
+
+  &-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90rem;
+  }
+
+  &-item{
+    width: 20rem;
+    margin: 1rem;
+
+    &__image{
+      width: 20rem;
+    }
+
+    &__title{
+      font-family: 'Roboto-Regular', sans-serif;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__price{
+      margin-top: .4rem;
+      font-family: 'Roboto-Bold', sans-serif;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+
+}
+
+/*
+@media (max-width: 1000px) {
+  .products{
+    &-list{width: 100vw;}
+    &-item{
+      width: 90%;
+      margin: 0 auto;
+      &__image{width: 20rem;}
+    }
+  }
+}
+*/

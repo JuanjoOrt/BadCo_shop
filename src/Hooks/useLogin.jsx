@@ -1,12 +1,13 @@
 import { useGoogleLogin } from 'react-google-login'
-import { UseUserData } from './useUserData'
+import { useContext } from 'react'
+import GlobalContext from '../Context/Context'
 import env from '../env.json'
 
 export function useLogin () {
-  const { signUser } = UseUserData()
+  const { setUser } = useContext(GlobalContext)
 
   const { signIn, loaded } = useGoogleLogin({
-    onSuccess: signUser,
+    onSuccess: (user) => setUser(user),
     onFailure: (err) => console.error(err.details),
     clientId: env.auth.idClient,
     isSignedIn: true
