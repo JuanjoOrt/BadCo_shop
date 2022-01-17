@@ -3,10 +3,14 @@ import { IoCloseSharp } from 'react-icons/io5'
 import { FiSearch } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import { useLogin } from '../../Hooks/useLogin'
+import { AiOutlineLoading } from 'react-icons/ai'
+import { useContext } from 'react'
+import GlobalContext from '../../Context/Context'
 
 export default function SideBar ({ visible, closeMenu }) {
   const visibleClass = visible ? 'sidebar-visible' : 'sidebar-no-visible'
-  const { signIn } = useLogin()
+  const { user } = useContext(GlobalContext)
+  const { signIn, loaded } = useLogin()
 
   return (
     <div className={`sidebar ${visibleClass}`}>
@@ -16,7 +20,7 @@ export default function SideBar ({ visible, closeMenu }) {
       </div>
       <div className="sidebar-body">
         <div>
-          <div className="sidebar-item">Products</div>
+          <div className="sidebar-item"><Link to='/products' className='sidebar-link'>Products</Link></div>
           <div className="sidebar-item"><Link to='/about' className='sidebar-link'>About</Link></div>
         </div>
         <div>
@@ -24,7 +28,13 @@ export default function SideBar ({ visible, closeMenu }) {
             <input type="text" className='sidebar-input' placeholder='Type Search Here'/>
             <FiSearch className='sidebar-input-icon'/>
           </div>
-          <div className="sidebar-item cursor" onClick={signIn}>Login</div>
+          {
+            loaded
+              ? user
+                ? <Link to='/'><div className='sidebar-item'>{user.profileObj.name}</div></Link>
+                : <div onClick={signIn} className='sidebar-item cursor'>Login</div>
+              : <AiOutlineLoading className='header-loading'/>
+          }
         </div>
       </div>
     </div>

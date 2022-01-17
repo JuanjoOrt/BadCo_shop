@@ -6,6 +6,7 @@
   height: 100%;
   background: #2B2B2B;
   transition: all .2s;
+  top: 0;
 
   &-visible{
     left: 0;
@@ -46,6 +47,7 @@
     margin: 1.5rem 0;
     font-family: 'Roboto-Regular', sans-serif;
     font-size: 20px;
+    color: white;
   }
 
   &-input{
