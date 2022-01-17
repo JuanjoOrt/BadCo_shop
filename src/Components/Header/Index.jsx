@@ -30,7 +30,7 @@ export default function Header ({ sticky = false }) {
           isScrolled
             ? <div className='header-container'>
                 <div className='header-logo'>
-                  <div onClick={scrollToTop}>BAD CO.</div>
+                  <div onClick={scrollToTop} className='cursor'>BAD CO.</div>
                 </div>
               </div>
             : <div className='header-container'>
