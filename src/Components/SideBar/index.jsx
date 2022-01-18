@@ -11,7 +11,7 @@ import useSearch from '../../Hooks/useSearch'
 export default function SideBar ({ visible, closeMenu }) {
   const visibleClass = visible ? 'sidebar-visible' : 'sidebar-no-visible'
   const { user } = useContext(GlobalContext)
-  const { search, handleSearch, handleSubmit } = useSearch()
+  const { search, handleSearch, handleSubmit, navigate } = useSearch()
   const { signIn, loaded } = useLogin()
 
   return (
@@ -30,7 +30,7 @@ export default function SideBar ({ visible, closeMenu }) {
             <form onSubmit={handleSubmit}>
               <input type="text" className='sidebar-input' placeholder='Type Search Here' value={search} onChange={handleSearch}/>
             </form>
-            <FiSearch className='sidebar-input-icon'/>
+            <FiSearch className='sidebar-input-icon' onClick={navigate}/>
           </div>
           {
             loaded

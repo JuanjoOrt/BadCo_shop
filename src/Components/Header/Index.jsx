@@ -14,7 +14,7 @@ export default function Header () {
   const [showSideBar, setShowSideBar] = useState(false)
   const { signIn } = useLogin()
   const { isScrolled } = UseIsScrolled()
-  const { search, handleSearch, handleSubmit } = useSearch()
+  const { search, handleSearch, handleSubmit, navigate } = useSearch()
   const classScrolled = isScrolled ? 'scrolled' : ''
 
   const scrollToTop = () => {
@@ -48,7 +48,7 @@ export default function Header () {
                     <form onSubmit={handleSubmit}>
                       <input type="text" className='header-input' placeholder='Type Search Here' value={search} onChange={handleSearch}/>
                     </form>
-                    <FiSearch className='header-input-icon'/>
+                    <FiSearch className='header-input-icon' onClick={navigate}/>
                   </li>
                   <li className='header-desktop__item-right'>
                     {user

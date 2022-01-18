@@ -8,7 +8,7 @@ export default function useGetProducts () {
   const { isLoading, data } = useQuery('productsList', getProducts)
   const [dataToRender, setDataToRender] = useState([])
 
-  useEffect(() => { if (data) setDataToRender(data) }, [data])
+  useEffect(() => { if (data && search === '') setDataToRender(data) }, [data])
 
   useEffect(() => {
     if (data) {

@@ -7,6 +7,8 @@ export default function useSearch () {
   const navigateTo = useNavigate()
   const location = useLocation()
 
+  const navigate = () => { if (location.pathname !== '/products') navigateTo('/products') }
+
   const handleSearch = (e) => {
     const text = e.target.value
     setSearch(text)
@@ -14,8 +16,8 @@ export default function useSearch () {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (location.pathname !== '/products') navigateTo('/products')
+    navigate()
   }
 
-  return { search, handleSearch, handleSubmit }
+  return { search, handleSearch, handleSubmit, navigate }
 }
