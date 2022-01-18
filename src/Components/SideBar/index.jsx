@@ -6,10 +6,12 @@ import { useLogin } from '../../Hooks/useLogin'
 import { AiOutlineLoading } from 'react-icons/ai'
 import { useContext } from 'react'
 import GlobalContext from '../../Context/Context'
+import useSearch from '../../Hooks/useSearch'
 
 export default function SideBar ({ visible, closeMenu }) {
   const visibleClass = visible ? 'sidebar-visible' : 'sidebar-no-visible'
   const { user } = useContext(GlobalContext)
+  const { search, handleSearch, handleSubmit } = useSearch()
   const { signIn, loaded } = useLogin()
 
   return (
@@ -25,7 +27,9 @@ export default function SideBar ({ visible, closeMenu }) {
         </div>
         <div>
           <div className='sidebar-input-container'>
-            <input type="text" className='sidebar-input' placeholder='Type Search Here'/>
+            <form onSubmit={handleSubmit}>
+              <input type="text" className='sidebar-input' placeholder='Type Search Here' value={search} onChange={handleSearch}/>
+            </form>
             <FiSearch className='sidebar-input-icon'/>
           </div>
           {

@@ -7,12 +7,14 @@ import { useContext, useState } from 'react'
 import SideBar from '../SideBar'
 import { useLogin } from '../../Hooks/useLogin'
 import UseIsScrolled from '../../Hooks/useIsScrolled'
+import useSearch from '../../Hooks/useSearch'
 
 export default function Header () {
   const { user } = useContext(GlobalContext)
   const [showSideBar, setShowSideBar] = useState(false)
   const { signIn } = useLogin()
   const { isScrolled } = UseIsScrolled()
+  const { search, handleSearch, handleSubmit } = useSearch()
   const classScrolled = isScrolled ? 'scrolled' : ''
 
   const scrollToTop = () => {
@@ -43,7 +45,9 @@ export default function Header () {
                 </ul>
                 <ul className='header-desktop__list'>
                   <li className='header-desktop__item-right header-input-container'>
-                    <input type="text" className='header-input' placeholder='Type Search Here'/>
+                    <form onSubmit={handleSubmit}>
+                      <input type="text" className='header-input' placeholder='Type Search Here' value={search} onChange={handleSearch}/>
+                    </form>
                     <FiSearch className='header-input-icon'/>
                   </li>
                   <li className='header-desktop__item-right'>

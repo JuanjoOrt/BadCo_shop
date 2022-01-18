@@ -1,12 +1,11 @@
 import Layout from '../../Components/Layout'
-import { useQuery } from 'react-query'
-import { getProducts } from '../../Services/serviceProducts'
 import { AiOutlineLoading } from 'react-icons/ai'
 import './products.scss'
 import { Link } from 'react-router-dom'
+import useGetProducts from '../../Hooks/useGetProducts'
 
 export default function Products () {
-  const { isLoading, data } = useQuery('productsList', getProducts)
+  const { data, isLoading } = useGetProducts()
 
   return (
       <Layout>
