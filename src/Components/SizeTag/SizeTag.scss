@@ -1,0 +1,29 @@
+
+.sizetag{
+  background: white;
+  width: 2rem;
+  height: 2rem;
+  margin: 0 10px;
+  font-family: Roboto-Regular, 'sans-serif';
+  font-size: 14px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #aeb0b3;
+  cursor: pointer;
+  transition: all .2s;
+
+  &:hover{
+    background: black;
+    color: white;
+    border-color: black;
+  }
+
+  &.active{
+    background: black;
+    color: white;
+    border-color: black;
+  }
+
+}

@@ -5,14 +5,13 @@ import GlobalContext from '../../Context/Context'
 import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import SideBar from '../SideBar'
-import { AiOutlineLoading } from 'react-icons/ai'
 import { useLogin } from '../../Hooks/useLogin'
 import UseIsScrolled from '../../Hooks/useIsScrolled'
 
-export default function Header ({ sticky = false }) {
+export default function Header () {
   const { user } = useContext(GlobalContext)
   const [showSideBar, setShowSideBar] = useState(false)
-  const { signIn, loaded } = useLogin()
+  const { signIn } = useLogin()
   const { isScrolled } = UseIsScrolled()
   const classScrolled = isScrolled ? 'scrolled' : ''
 
@@ -48,17 +47,16 @@ export default function Header ({ sticky = false }) {
                     <FiSearch className='header-input-icon'/>
                   </li>
                   <li className='header-desktop__item-right'>
-                    {
-                      loaded
-                        ? user
-                          ? <Link to='/'><div>{user.profileObj.name}</div></Link>
-                          : <div onClick={signIn} className='cursor'>Login</div>
-                        : <AiOutlineLoading className='header-loading'/>
-                    }
+                    {user
+                      ? <div>{user.profileObj.name}</div>
+                      : <div onClick={signIn} className="cursor">Login</div>}
                   </li>
-                  <li className='header-desktop__item-right'>
-                    <FiShoppingCart className='header-cart'/>
-                  </li>
+                  {
+                    user && <li className='header-desktop__item-right'>
+                      <FiShoppingCart className='header-cart'/>
+                    </li>
+                  }
+
                 </ul>
               </div>
               <div className='header-mobile'>

@@ -1,0 +1,60 @@
+
+.detail{
+  display: flex;
+
+  &-gallery{
+    width: 50%;
+  }
+  &-container{
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    z-index: 999;
+    background: white;
+    display: flex;
+    justify-content: center;
+  }
+  &-content{
+    width: 90%;
+
+    &__title{
+      font-family: 'Roboto-Bold', sans-serif;
+      font-size: 36px;
+    }
+
+    &__description{
+      font-family: 'Roboto-Regular', sans-serif;
+      margin-top: 1rem;
+      font-size: 22px;
+    }
+
+    &__size{
+      margin-top: 3rem;
+      display: flex;
+    }
+
+    &__buy{
+      margin-top: 2rem;
+      margin-left: .5rem;
+    }
+
+    &__button{
+      font-family: 'Roboto-Regular', sans-serif;
+      font-size: 14px;
+      padding: 12px 30px;
+      color: white;
+      background: #464749;
+      border: 1px solid #464749;
+      cursor: pointer;
+
+      &:disabled{
+        background: #a4a4a4;
+        border: 1px solid #a4a4a4;
+        cursor: not-allowed;
+
+      }
+    }
+  }
+}

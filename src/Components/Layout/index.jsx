@@ -1,9 +1,9 @@
 import Header from '../Header/Index'
 
-export default function Layout ({ children, sticky }) {
+export default function Layout ({ children }) {
   return (
     <div>
-      <Header sticky={sticky}/>
+      <Header/>
       {children}
     </div>
   )
