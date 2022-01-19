@@ -15,7 +15,7 @@ export default function Detail () {
           {isError && <div>Esto es una pagina erronea</div>}
           {data && <>
             <div className='detail-gallery'>
-              {data.imageGallery.map((image, index) => <img src={image} key={index} alt='imagen de ropa'/>)}
+              {data.imageGallery.map((image, index) => <div key={index} className='detail-gallery__content'><img src={image} alt='imagen de ropa' className='detail-gallery__image'/></div>)}
             </div>
             <div className='detail-container'>
               <div className='detail-content'>

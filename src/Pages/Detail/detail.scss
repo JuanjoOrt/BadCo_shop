@@ -4,6 +4,10 @@
 
   &-gallery{
     width: 50%;
+
+    &__image{
+      width: 100%;
+    }
   }
   &-container{
     width: 50%;
@@ -55,6 +59,45 @@
         cursor: not-allowed;
 
       }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .detail{
+    flex-direction: column;
+    &-gallery {
+      margin-top: 80px;
+      width: 100%;
+      display: flex;
+      overflow: hidden;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+
+      &__content{
+        width: 100vw;
+        height: 50vh;
+        min-width: 100vw;
+        display: flex;
+        justify-content: center;
+        scroll-snap-align: start;
+
+      }
+
+
+      &__image{
+        width: auto;
+      }
+
+
+    }
+
+    &-container{
+      position: relative;
+      width: 100%;
+      left: 0;
+      top: 50px;
+      margin-bottom: 100px;
     }
   }
 }
