@@ -8,14 +8,21 @@ export default function useGetProducts () {
   const { isLoading, data } = useQuery('productsList', getProducts)
   const [dataToRender, setDataToRender] = useState([])
 
-  useEffect(() => { if (data && search === '') setDataToRender(data) }, [data])
+  const searchEngine = () => {
+    const saveData = (search !== '')
+      ? data.filter(product => product.name.toLowerCase().includes(search.toLowerCase()))
+      : data
+    setDataToRender(saveData)
+  }
+
+  useEffect(() => {
+    if (data && search === '') setDataToRender(data)
+    if (data && search !== '') searchEngine()
+  }, [data])
 
   useEffect(() => {
     if (data) {
-      const saveData = (search !== '')
-        ? data.filter(product => product.name.toLowerCase().includes(search.toLowerCase()))
-        : data
-      setDataToRender(saveData)
+      searchEngine()
     }
   }, [search])
 

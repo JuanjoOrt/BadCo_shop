@@ -8,7 +8,7 @@ import { useContext } from 'react'
 import GlobalContext from '../../Context/Context'
 import useSearch from '../../Hooks/useSearch'
 
-export default function SideBar ({ visible, closeMenu }) {
+export default function SideBar ({ visible, closeMenu, clickProducts }) {
   const visibleClass = visible ? 'sidebar-visible' : 'sidebar-no-visible'
   const { user } = useContext(GlobalContext)
   const { search, handleSearch, handleSubmit, navigate } = useSearch()
@@ -22,7 +22,7 @@ export default function SideBar ({ visible, closeMenu }) {
       </div>
       <div className="sidebar-body">
         <div>
-          <div className="sidebar-item"><Link to='/products' className='sidebar-link'>Products</Link></div>
+          <div className="sidebar-item"><Link to='/products' className='sidebar-link' onClick={clickProducts}>Products</Link></div>
           <div className="sidebar-item"><Link to='/about' className='sidebar-link'>About</Link></div>
         </div>
         <div>

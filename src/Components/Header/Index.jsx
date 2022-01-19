@@ -11,7 +11,7 @@ import useSearch from '../../Hooks/useSearch'
 import LoginPanel from '../LoginPanel'
 
 export default function Header () {
-  const { user } = useContext(GlobalContext)
+  const { user, setSearch } = useContext(GlobalContext)
   const [showSideBar, setShowSideBar] = useState(false)
   const { signIn } = useLogin()
   const { isScrolled } = UseIsScrolled()
@@ -24,6 +24,8 @@ export default function Header () {
       behavior: 'smooth'
     })
   }
+
+  const handleClickProducts = () => setSearch('')
 
   return (
     <>
@@ -41,8 +43,8 @@ export default function Header () {
               </div>
               <div className='header-desktop'>
                 <ul className='header-desktop__list'>
-                  <Link to='/products'><li className='header-desktop__item-left'>Products</li></Link>
-                  <Link to='/about'><li className='header-desktop__item-left'>About</li></Link>
+                  <li className='header-desktop__item-left' onClick={handleClickProducts}><Link to='/products'>Products</Link></li>
+                  <li className='header-desktop__item-left'><Link to='/about'>About</Link></li>
                 </ul>
                 <ul className='header-desktop__list'>
                   <li className='header-desktop__item-right header-input-container'>
@@ -70,7 +72,7 @@ export default function Header () {
             </div>
         }
       </div>
-      <SideBar visible={showSideBar} closeMenu={() => setShowSideBar(false)} />
+      <SideBar visible={showSideBar} closeMenu={() => setShowSideBar(false)} clickProducts={handleClickProducts}/>
     </>
 
   )

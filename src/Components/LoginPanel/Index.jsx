@@ -15,8 +15,8 @@ export default function LoginPanel ({ user }) {
       </div>
       {active &&
       <div className='login-panel-tab'>
-        <div className='login-panel-tab__item'>Panel de control</div>
-        <div className='login-panel-tab__hr'/>
+        {/*<div className='login-panel-tab__item'>Información</div>
+        <div className='login-panel-tab__hr'/>*/}
         <div className='login-panel-tab__item' onClick={signOut}>Salir</div>
       </div>}
     </div>
