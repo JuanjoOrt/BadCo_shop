@@ -3,16 +3,18 @@ import Layout from '../../Components/Layout'
 import './detail.scss'
 import { useEffect, useState } from 'react'
 import SizeTag from '../../Components/SizeTag'
+import NotFound from '../NotFound'
 
 export default function Detail () {
   const { data, isError } = useGetProduct()
   const [sizeSelected, setSizeSelected] = useState()
   useEffect(() => { window.scrollTo({ top: 0 }) }, [])
 
+  if (isError) return <NotFound />
+
   return (
       <Layout>
         <div className='detail'>
-          {isError && <div>Esto es una pagina erronea</div>}
           {data && <>
             <div className='detail-gallery'>
               {data.imageGallery.map((image, index) => <div key={index} className='detail-gallery__content'><img src={image} alt='imagen de ropa' className='detail-gallery__image'/></div>)}

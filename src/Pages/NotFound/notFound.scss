@@ -1,0 +1,25 @@
+
+.not-found{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 15rem auto;
+
+  &__unicorn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    img{
+      width: 12rem;
+    }
+  }
+
+  &__text{
+    margin-top: 2rem;
+    font-family: 'Roboto-Bold', sans-serif;
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+  }
+}
