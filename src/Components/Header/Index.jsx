@@ -8,6 +8,7 @@ import SideBar from '../SideBar'
 import { useLogin } from '../../Hooks/useLogin'
 import UseIsScrolled from '../../Hooks/useIsScrolled'
 import useSearch from '../../Hooks/useSearch'
+import LoginPanel from '../LoginPanel'
 
 export default function Header () {
   const { user } = useContext(GlobalContext)
@@ -52,7 +53,7 @@ export default function Header () {
                   </li>
                   <li className='header-desktop__item-right'>
                     {user
-                      ? <div>{user.profileObj.name}</div>
+                      ? <LoginPanel user={user.profileObj.name} />
                       : <div onClick={signIn} className="cursor">Login</div>}
                   </li>
                   {

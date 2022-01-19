@@ -1,0 +1,46 @@
+
+
+.login-panel{
+  position: relative;
+
+  &-user{
+    background: #242424;
+    color: white;
+    padding: 3px 20px;
+    border-bottom: 1px solid #242424;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    &__icon{
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  }
+
+  &-tab{
+    width: 10rem;
+    background: #242424;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    border-bottom: 1px solid #242424;
+    border-radius: 5px;
+
+    &__item{
+      color: white;
+      font-size: 16px;
+      font-family: 'Roboto-Regular', sans-serif;
+      padding: 8px 8px;
+      cursor: pointer;
+    }
+
+    &__hr{
+      background: white;
+      width: 100%;
+      height: 1px;
+    }
+  }
+}

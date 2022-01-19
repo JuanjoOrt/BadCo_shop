@@ -1,4 +1,4 @@
-import { useGoogleLogin } from 'react-google-login'
+import { useGoogleLogin, useGoogleLogout } from 'react-google-login'
 import { useContext } from 'react'
 import GlobalContext from '../Context/Context'
 import env from '../env.json'
@@ -13,5 +13,10 @@ export function useLogin () {
     isSignedIn: true
   })
 
-  return { signIn, loaded }
+  const { signOut } = useGoogleLogout({
+    clientId: env.auth.idClient,
+    onLogoutSuccess: () => setUser(null)
+  })
+
+  return { signIn, signOut, loaded }
 }
