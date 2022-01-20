@@ -7,6 +7,7 @@ import ItemCart from './ItemCart'
 export default function SideShoppingCart () {
   const { visible, setVisible, addButtonRef, items } = useContext(ContextCart)
   const classVisible = visible ? 'show' : ''
+  const showButton = items.length !== 0
   const ref = useRef()
 
   const closeModal = () => setVisible(false)
@@ -25,6 +26,9 @@ export default function SideShoppingCart () {
       <div className='side-shopping-cart__header'><IoCloseSharp onClick={closeModal}/></div>
       <div className='side-shopping-cart__body'>
         {items.map((item, index) => <ItemCart key={index} item={item}/>)}
+      </div>
+      <div className='side-shopping-cart__bottom'>
+        {showButton && <button>Tramitar pedido</button>}
       </div>
     </div>
   )

@@ -10,9 +10,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     img{
       height: 3.8rem;
+    }
+
+    &__count{
+      background: #e3e1df;
+      color: black;
+      font-family: 'Roboto-Regular', sans-serif;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      border: 2px solid #2a2a2a;
+      border-radius: 90px;
+      padding: 1px 6px;
     }
   }
 
@@ -43,5 +56,27 @@
       }
 
     }
+  }
+
+  &-close{
+    margin-left: 1rem;
+    display: none;
+    align-items: center;
+    transition: all .2s;
+
+    svg{
+      cursor: pointer;
+      font-size: 28px;
+    }
+  }
+
+  &:hover > .item-card-close{
+    display: flex;
+  }
+}
+
+@media (max-width: 1000px) {
+  .item-card-close{
+    display: flex;
   }
 }
