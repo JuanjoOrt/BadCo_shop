@@ -19,7 +19,7 @@ export default function ItemCart ({ item }) {
         <div className="item-card-right__title">{item.name}</div>
         <div className="item-card-right__desc">
           <span className='item-card-right__desc size'>Talla: {item.size.toUpperCase()}</span>
-          <span className='item-card-right__desc price'>Precio: {item.price}</span>
+          <span className='item-card-right__desc price'>Precio: {item.price} €</span>
         </div>
       </div>
       <div className="item-card-close">
