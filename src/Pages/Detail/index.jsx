@@ -1,19 +1,22 @@
 import useGetProduct from '../../Hooks/useGetParams'
 import Layout from '../../Components/Layout'
-import './detail.scss'
-import { useEffect, useState } from 'react'
+import ContextCart from '../../Context/ContextCart'
+import { useContext, useEffect, useState } from 'react'
 import SizeTag from '../../Components/SizeTag'
 import NotFound from '../NotFound'
 import useShoppingCart from '../../Hooks/useShoppingCart'
+import './detail.scss'
 
 export default function Detail () {
+  const { setVisible, addButtonRef } = useContext(ContextCart)
   const { data, isError } = useGetProduct()
   const { addCart } = useShoppingCart()
   const [sizeSelected, setSizeSelected] = useState()
   useEffect(() => { window.scrollTo({ top: 0 }) }, [])
 
   const prepareToAdd = () => {
-    const item = { id: data.id, price: data.price, size: sizeSelected }
+    const item = { id: data.id, price: data.price, size: sizeSelected, image: data.image }
+    setVisible(true)
     addCart(item)
   }
 
@@ -40,7 +43,7 @@ export default function Detail () {
                   ))}
                 </div>
                 <div className='detail-content__buy'>
-                  <button className='detail-content__button' disabled={!sizeSelected} onClick={prepareToAdd}>Añadir al carrito</button>
+                  <button className='detail-content__button' disabled={!sizeSelected} onClick={prepareToAdd} ref={addButtonRef}>Añadir al carrito</button>
                 </div>
               </div>
             </div>

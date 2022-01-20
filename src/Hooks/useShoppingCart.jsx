@@ -12,8 +12,6 @@ export default function useShoppingCart () {
       item.count = 0
       setItems(prevItems => [...prevItems, item])
     }
-
-    console.log(items)
   }
 
   return { addCart }

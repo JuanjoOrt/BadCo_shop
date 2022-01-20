@@ -4,7 +4,7 @@ import { IoCloseSharp } from 'react-icons/io5'
 import ContextCart from '../../../Context/ContextCart'
 
 export default function SideShoppingCart () {
-  const { visible, setVisible } = useContext(ContextCart)
+  const { visible, setVisible, addButtonRef } = useContext(ContextCart)
   const classVisible = visible ? 'show' : ''
   const ref = useRef()
 
@@ -12,7 +12,7 @@ export default function SideShoppingCart () {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (ref.current && !ref.current.contains(event.target)) closeModal()
+      if (ref.current && !ref.current.contains(event.target) && !addButtonRef.current.contains(event.target)) closeModal()
     }
 
     if (visible) document.addEventListener('mousedown', handleClickOutside)
