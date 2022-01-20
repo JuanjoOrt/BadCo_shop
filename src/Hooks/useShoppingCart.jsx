@@ -9,7 +9,7 @@ export default function useShoppingCart () {
     if (itemFounded) {
       itemFounded.count = itemFounded.count + 1
     } else {
-      item.count = 0
+      item.count = 1
       setItems(prevItems => [...prevItems, item])
     }
   }
