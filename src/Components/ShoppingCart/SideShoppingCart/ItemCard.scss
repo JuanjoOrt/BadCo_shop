@@ -1,0 +1,47 @@
+
+.item-card{
+  margin: 1.5rem 0;
+  display: flex;
+
+  &-left{
+    background: #e3e1df;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img{
+      height: 3.8rem;
+    }
+  }
+
+  &-right{
+    margin-left: 1rem;
+    width: 60%;
+
+    &__title{
+      font-family: 'Roboto-Bold', sans-serif;
+      font-size: 16px;
+    }
+
+    &__desc{
+      display: flex;
+      margin-top: .2rem;
+
+      span{
+        font-family: 'Roboto-Regular', sans-serif;
+        font-size: 14px;
+      }
+
+      &.size{
+        margin-right: .5rem;
+      }
+
+      &.price{
+        margin-left: .5rem;
+      }
+
+    }
+  }
+}

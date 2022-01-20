@@ -15,7 +15,8 @@ export default function Detail () {
   useEffect(() => { window.scrollTo({ top: 0 }) }, [])
 
   const prepareToAdd = () => {
-    const item = { id: data.id, price: data.price, size: sizeSelected, image: data.image }
+    console.log(data)
+    const item = { id: data.id, price: data.price, size: sizeSelected, image: data.image, name: data.name }
     setVisible(true)
     addCart(item)
   }
