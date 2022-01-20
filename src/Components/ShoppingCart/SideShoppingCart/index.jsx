@@ -3,11 +3,12 @@ import { useContext, useEffect, useRef } from 'react'
 import { IoCloseSharp } from 'react-icons/io5'
 import ContextCart from '../../../Context/ContextCart'
 import ItemCart from './ItemCart'
+import EmptyCart from '../../EmptyCart'
 
 export default function SideShoppingCart () {
   const { visible, setVisible, addButtonRef, items } = useContext(ContextCart)
   const classVisible = visible ? 'show' : ''
-  const showButton = items.length !== 0
+  const emptyCart = items.length === 0
   const ref = useRef()
 
   const closeModal = () => setVisible(false)
@@ -26,9 +27,10 @@ export default function SideShoppingCart () {
       <div className='side-shopping-cart__header'><IoCloseSharp onClick={closeModal}/></div>
       <div className='side-shopping-cart__body'>
         {items.map((item, index) => <ItemCart key={index} item={item}/>)}
+        {emptyCart && <EmptyCart />}
       </div>
       <div className='side-shopping-cart__bottom'>
-        {showButton && <button>Tramitar pedido</button>}
+        {!emptyCart && <button>Tramitar pedido</button>}
       </div>
     </div>
   )

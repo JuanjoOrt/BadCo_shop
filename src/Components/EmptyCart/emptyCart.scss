@@ -1,0 +1,15 @@
+
+.empty-cart{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__desc{
+    margin-top: 1rem;
+    font-family: Roboto-Regular, sans-serif;
+    font-size: 24px;
+    width: 90%;
+  }
+}
