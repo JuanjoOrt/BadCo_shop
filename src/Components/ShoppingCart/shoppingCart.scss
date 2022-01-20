@@ -1,0 +1,21 @@
+
+.shopping-cart{
+
+  &-icon{
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+
+
+@media (max-width: 1000px) {
+  .shopping-cart{
+
+    &-icon{
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+  }
+}
+

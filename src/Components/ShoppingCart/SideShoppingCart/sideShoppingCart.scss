@@ -1,0 +1,38 @@
+
+
+.side-shopping-cart{
+  background: #2A2A2A;
+  position: fixed;
+  z-index: 99999;
+  width: 325px;
+  height: 100%;
+  right: -325px;
+  top: 0;
+  transition: all .2s;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  &__header{
+    margin-top: 1rem;
+
+     svg{
+       margin-left: .2rem;
+       color: white;
+       font-size: 45px;
+       cursor: pointer;
+     }
+  }
+
+  &.show{
+  right: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .side-shopping-cart{
+    width: 100%;
+    right: -100%;
+    border-radius: 0;
+  }
+}
+

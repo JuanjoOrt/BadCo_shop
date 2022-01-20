@@ -1,5 +1,5 @@
 import './header.scss'
-import { FiShoppingCart, FiSearch } from 'react-icons/fi'
+import { FiSearch } from 'react-icons/fi'
 import { IoMenuOutline } from 'react-icons/io5'
 import GlobalContext from '../../Context/Context'
 import { Link } from 'react-router-dom'
@@ -9,6 +9,8 @@ import { useLogin } from '../../Hooks/useLogin'
 import UseIsScrolled from '../../Hooks/useIsScrolled'
 import useSearch from '../../Hooks/useSearch'
 import LoginPanel from '../LoginPanel'
+import ShoppingCart from '../ShoppingCart'
+import SideShoppingCart from '../ShoppingCart/SideShoppingCart'
 
 export default function Header () {
   const { user, setSearch } = useContext(GlobalContext)
@@ -60,19 +62,21 @@ export default function Header () {
                   </li>
                   {
                     user && <li className='header-desktop__item-right'>
-                      <FiShoppingCart className='header-cart'/>
+                      <ShoppingCart />
                     </li>
                   }
 
                 </ul>
               </div>
               <div className='header-mobile'>
+                <ShoppingCart />
                 <IoMenuOutline className='header-menu' onClick={() => setShowSideBar(!showSideBar)}/>
               </div>
             </div>
         }
       </div>
       <SideBar visible={showSideBar} closeMenu={() => setShowSideBar(false)} clickProducts={handleClickProducts}/>
+      <SideShoppingCart />
     </>
 
   )

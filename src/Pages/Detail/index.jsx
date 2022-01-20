@@ -4,14 +4,20 @@ import './detail.scss'
 import { useEffect, useState } from 'react'
 import SizeTag from '../../Components/SizeTag'
 import NotFound from '../NotFound'
+import useShoppingCart from '../../Hooks/useShoppingCart'
 
 export default function Detail () {
   const { data, isError } = useGetProduct()
+  const { addCart } = useShoppingCart()
   const [sizeSelected, setSizeSelected] = useState()
   useEffect(() => { window.scrollTo({ top: 0 }) }, [])
 
-  if (isError) return <NotFound />
+  const prepareToAdd = () => {
+    const item = { id: data.id, price: data.price, size: sizeSelected }
+    addCart(item)
+  }
 
+  if (isError) return <NotFound />
   return (
       <Layout>
         <div className='detail'>
@@ -34,7 +40,7 @@ export default function Detail () {
                   ))}
                 </div>
                 <div className='detail-content__buy'>
-                  <button className='detail-content__button' disabled={!sizeSelected}>Añadir al carrito</button>
+                  <button className='detail-content__button' disabled={!sizeSelected} onClick={prepareToAdd}>Añadir al carrito</button>
                 </div>
               </div>
             </div>

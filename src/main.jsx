@@ -2,8 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
-import { GlobalContextProvider } from './Context/Context'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { GlobalContextProvider } from './Context/Context'
+import { CartContextProvider } from './Context/ContextCart'
 
 const queryClient = new QueryClient()
 
@@ -16,7 +17,8 @@ const composeProviders = (...providers) => ({ children }) => {
 
 const Providers = composeProviders(
   BrowserRouter,
-  GlobalContextProvider
+  GlobalContextProvider,
+  CartContextProvider
 )
 
 ReactDOM.render(
