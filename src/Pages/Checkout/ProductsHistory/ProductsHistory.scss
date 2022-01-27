@@ -1,0 +1,15 @@
+
+.products-history{
+  width: 85%;
+
+  &__title{
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 20px;
+  }
+
+  &__body{
+    height: 49vh;
+    margin-top: 1rem;
+    overflow-y: auto;
+  }
+}

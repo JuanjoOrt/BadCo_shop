@@ -4,14 +4,21 @@ import { IoCloseSharp } from 'react-icons/io5'
 import ContextCart from '../../../Context/ContextCart'
 import ItemCart from './ItemCart'
 import EmptyCart from '../../EmptyCart'
+import { useNavigate } from 'react-router-dom'
 
 export default function SideShoppingCart () {
   const { visible, setVisible, addButtonRef, items } = useContext(ContextCart)
   const classVisible = visible ? 'show' : ''
+  const navigate = useNavigate()
   const emptyCart = items.length === 0
   const ref = useRef()
 
   const closeModal = () => setVisible(false)
+
+  const handleSubmit = () => {
+    navigate('/checkout')
+    setVisible(false)
+  }
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -30,7 +37,7 @@ export default function SideShoppingCart () {
         {emptyCart && <EmptyCart />}
       </div>
       <div className='side-shopping-cart__bottom'>
-        {!emptyCart && <button>Tramitar pedido</button>}
+        {!emptyCart && <button onClick={handleSubmit}>Tramitar pedido</button>}
       </div>
     </div>
   )

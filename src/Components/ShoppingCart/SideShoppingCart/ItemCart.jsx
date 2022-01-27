@@ -1,7 +1,5 @@
 import { IoCloseSharp } from 'react-icons/io5'
 import './ItemCard.scss'
-import { useContext } from 'react'
-import ContextCart from '../../../Context/ContextCart'
 import useShoppingCart from '../../../Hooks/useShoppingCart'
 
 export default function ItemCart ({ item }) {
