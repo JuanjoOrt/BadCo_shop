@@ -12,4 +12,31 @@
     margin-top: 1rem;
     overflow-y: auto;
   }
+
+  &-details{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+
+    &__content{
+      min-width: 11rem;
+    }
+
+    &__item{
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Roboto-Regular', sans-serif;
+      font-size: 15px;
+      color: #707070;
+      margin-top: 2px;
+
+      &-bold{
+        margin-top: 2px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Roboto-Bold', sans-serif;
+        font-size: 17px;
+      }
+    }
+  }
 }

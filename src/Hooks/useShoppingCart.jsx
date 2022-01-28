@@ -20,5 +20,13 @@ export default function useShoppingCart () {
     setItems(newCart)
   }
 
-  return { addCart, removeCart }
+  const getArticlesPrice = () => {
+    let total = 0
+    items.forEach(item => {
+      total = total + (item.price * item.count)
+    })
+    return total
+  }
+
+  return { addCart, removeCart, getArticlesPrice }
 }

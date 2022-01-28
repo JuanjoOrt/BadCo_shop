@@ -1,11 +1,24 @@
 
 .checkout{
 
+  &-container {
+    display: flex;
+  }
+
   &-left{
     background: #FAFAFA;
     height: 100vh;
     width: 50vw;
     box-shadow: inset 0 0 0 1px #EFEFEF;
+    display: flex;
+    justify-content: center;
+    padding-top: 9rem;
+    box-sizing: border-box;
+  }
+
+  &-right{
+    width: 50vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     padding-top: 9rem;

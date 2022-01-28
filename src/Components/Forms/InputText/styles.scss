@@ -1,0 +1,24 @@
+
+.inputText{
+  position: relative;
+
+
+  &-label {
+    font-family: 'Roboto-Regular', sans-serif;
+    position: absolute;
+    left: 15px;
+    top: 17px;
+    color: #787878;
+    cursor: text;
+    user-select: none;
+  }
+
+  &-input{
+    border: 1px solid #dedede;
+    border-radius: 4px;
+
+    &:focus > .inputText-label {
+      color: red;
+    }
+  }
+}
