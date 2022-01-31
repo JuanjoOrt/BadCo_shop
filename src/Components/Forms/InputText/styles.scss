@@ -2,7 +2,7 @@
 .inputText{
   position: relative;
   height: 72px;
-
+  width: 100%;
 
   &-label {
     font-family: 'Roboto-Regular', sans-serif;
@@ -18,6 +18,8 @@
   &-input{
     border: 1px solid #bebebe;
     border-radius: 4px;
+    width: 100%;
+
 
     &:focus + .inputText-label{
       font-size: 12px;

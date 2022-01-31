@@ -1,5 +1,6 @@
 import InputText from '../../../../Components/Forms/InputText/InputText'
 import { Formik, Form } from 'formik'
+import './styles.scss'
 
 export default function FormCheckout () {
   return (
