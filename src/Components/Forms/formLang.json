@@ -1,0 +1,9 @@
+{
+  "name": "Nombre",
+  "dni": "DNI",
+  "telephone": "Teléfono",
+  "address": "Dirección",
+  "postalCode": "Codigo Postal",
+  "city": "Ciudad",
+  "country": "País"
+}

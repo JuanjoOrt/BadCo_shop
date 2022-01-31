@@ -4,3 +4,16 @@
   padding: 24px 15px 10px 15px;
   font-size: 16px;
 }
+
+.input-error{
+  border-color: #C04A4A;
+  outline-color: #C04A4A;
+}
+
+.form-error {
+  font-size: 13px;
+  padding-left: 5px;
+  padding-top: 2px;
+  font-family: 'Roboto-Regular', sans-serif;
+  color: #C04A4A;
+}
