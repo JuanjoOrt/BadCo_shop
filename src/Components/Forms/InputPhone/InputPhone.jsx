@@ -1,8 +1,9 @@
 import { useField } from 'formik'
+import NumberFormat from 'react-number-format'
 import lang from '../formLang.json'
 import '../forms.scss'
 
-export default function InputText ({ id, ...props }) {
+export default function InputPhone ({ id, ...props }) {
   const [field, meta] = useField(props)
   const name = lang[props.name] ? lang[props.name] : props.name
   const showError = meta.touched && meta.error
@@ -10,7 +11,8 @@ export default function InputText ({ id, ...props }) {
 
   return (
     <div className='input-content'>
-      <input
+      <NumberFormat
+        format="+34 ### ## ## ##"
         id={id}
         name={props.name}
         className={`input-content-input input ${classError}`}

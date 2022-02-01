@@ -2,7 +2,7 @@ import { useField } from 'formik'
 import lang from '../formLang.json'
 import '../forms.scss'
 
-export default function InputText ({ id, ...props }) {
+export default function InputSelect ({ id, children, ...props }) {
   const [field, meta] = useField(props)
   const name = lang[props.name] ? lang[props.name] : props.name
   const showError = meta.touched && meta.error
@@ -10,16 +10,12 @@ export default function InputText ({ id, ...props }) {
 
   return (
     <div className='input-content'>
-      <input
-        id={id}
-        name={props.name}
-        className={`input-content-input input ${classError}`}
-        placeholder=' '
-        type='text'
-        {...field} {...props}
-      />
+      <select {...field} className={`input-field ${classError}`}>
+        {children}
+      </select>
       <label htmlFor={id} className='input-content-label'>{name}</label>
       { showError && <div className='form-error'>ErrorError</div>}
     </div>
+
   )
 }

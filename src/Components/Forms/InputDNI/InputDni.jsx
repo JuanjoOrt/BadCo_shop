@@ -1,6 +1,5 @@
 import { useField } from 'formik'
 import lang from '../formLang.json'
-import './styles.scss'
 import '../forms.scss'
 
 export default function InputDni ({ id, ...props }) {
@@ -10,16 +9,17 @@ export default function InputDni ({ id, ...props }) {
   const classError = showError ? 'input-error' : ''
 
   return (
-    <div className='inputDni'>
+    <div className='input-content'>
       <input
         id={id}
         name={props.name}
-        className={`inputDni-input input ${classError}`}
+        className={`input-content-input input ${classError}`}
         placeholder=' '
+        maxLength={9}
         type='text'
         {...field} {...props}
       />
-      <label htmlFor={id} className='inputDni-label'>{name}</label>
+      <label htmlFor={id} className='input-content-label'>{name}</label>
       { showError && <div className='form-error'>ErrorError</div>}
     </div>
   )
