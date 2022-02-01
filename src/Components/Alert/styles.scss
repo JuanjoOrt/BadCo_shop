@@ -1,0 +1,20 @@
+
+.Alert {
+  background: #FFFBE6;
+  margin-bottom: 1rem;
+  border: 1px solid #FFE58F;
+  border-radius: 8px;
+  padding: 1rem 1rem .8rem 1rem;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto-Regular', sans-serif;
+
+  svg{
+    font-size: 30px;
+    color: #F6D683;
+  }
+
+  &-text {
+    margin-left: .3rem;
+  }
+}

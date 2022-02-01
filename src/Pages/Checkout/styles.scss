@@ -14,10 +14,12 @@
     justify-content: center;
     padding-top: 9rem;
     box-sizing: border-box;
+    position: fixed;
   }
 
   &-right{
     width: 50vw;
+    margin-left: 50vw;
     height: 100vh;
     display: flex;
     justify-content: center;
