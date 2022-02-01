@@ -3,14 +3,14 @@ import lang from '../formLang.json'
 import NumberFormat from 'react-number-format'
 import '../forms.scss'
 
-export default function InputNumber ({ id, ...props }) {
+export default function InputNumber ({ id, className = '', ...props }) {
   const [field, meta] = useField(props)
   const name = lang[props.name] ? lang[props.name] : props.name
   const showError = meta.touched && meta.error
   const classError = showError ? 'input-error' : ''
 
   return (
-    <div className='input-content'>
+    <div className={`input-content ${className}`} >
       <NumberFormat
         id={id}
         name={props.name}

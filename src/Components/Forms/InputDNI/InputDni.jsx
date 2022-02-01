@@ -2,14 +2,14 @@ import { useField } from 'formik'
 import lang from '../formLang.json'
 import '../forms.scss'
 
-export default function InputDni ({ id, ...props }) {
+export default function InputDni ({ id, className = '', ...props }) {
   const [field, meta] = useField(props)
   const name = lang[props.name] ? lang[props.name] : props.name
   const showError = meta.touched && meta.error
   const classError = showError ? 'input-error' : ''
 
   return (
-    <div className='input-content'>
+    <div className={`input-content ${className}`} >
       <input
         id={id}
         name={props.name}
