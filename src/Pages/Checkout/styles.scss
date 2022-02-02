@@ -26,4 +26,25 @@
     padding-top: 9rem;
     box-sizing: border-box;
   }
+
+}
+
+@media (max-width: 1000px) {
+  .checkout {
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-left {
+      position: relative;
+      width: 100vw;
+    }
+
+    &-right {
+      margin-left: 0;
+      width: 100vw;
+    }
+  }
 }

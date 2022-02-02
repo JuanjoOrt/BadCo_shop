@@ -3,13 +3,13 @@ import './shoppingCart.scss'
 import { useContext } from 'react'
 import ContextCart from '../../Context/ContextCart'
 
-export default function ShoppingCart () {
+export default function ShoppingCart ({ hideShoppingCart }) {
   const { setVisible } = useContext(ContextCart)
   const handleClick = () => setVisible(true)
 
   return (
     <div className='shopping-cart'>
-      <FiShoppingCart className='shopping-cart-icon' onClick={handleClick}/>
+      {!hideShoppingCart && <FiShoppingCart className='shopping-cart-icon' onClick={handleClick}/>}
     </div>
   )
 }

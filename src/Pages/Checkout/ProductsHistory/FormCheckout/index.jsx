@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik'
 import InputDNI from '../../../../Components/Forms/InputDNI/InputDni'
 import InputPhone from '../../../../Components/Forms/InputPhone/InputPhone'
 import InputNumber from '../../../../Components/Forms/InputNumber/InputNumber'
+import { validateDNI, validateEmptyInput } from '../../../../Components/Forms/validations'
 import Alert from '../../../../Components/Alert/Alert'
 import './styles.scss'
 import Card from './Card'
@@ -13,14 +14,14 @@ export default function FormCheckout () {
       <div className='products-history__title'>Información del comprador</div>
       <hr/>
       <Formik
-        initialValues={ { name: '', dni: '', telephone: '', postalCode: '', country: '', cardName: '', cardNumber: '', cardExpiry: '', cardCVV: '' } }
-        onSubmit={() => console.log('holiwi')}
+        initialValues={ { name: '', dni: '', address: '', telephone: '', postalCode: '', country: '', cardName: '', cardNumber: '', cardExpiry: '', cardCVV: '' } }
+        onSubmit={(values) => alert(values)}
       >
         <Form>
           <div className='header-form'>
-            <InputText id='name' name='name' className='margin-bottom'/>
+            <InputText id='name' name='name' className='margin-bottom' validate={validateEmptyInput}/>
             <div className='flex-two-elements'>
-              <InputDNI id='dni' name='dni' className='margin-bottom form-dni'/>
+              <InputDNI id='dni' name='dni' className='margin-bottom form-dni' validate={validateDNI}/>
               <InputPhone id='telephone' name='telephone' className='margin-bottom form-phone'/>
             </div>
             <InputText id='address' name='address' className='margin-bottom'/>
@@ -32,6 +33,9 @@ export default function FormCheckout () {
           <Alert>Está pagina es un proyecto con fines educativos, por favor, no pongas datos reales.</Alert>
           <div className='bottom-form'>
             <Card />
+          </div>
+          <div className='header-form__buttonContainer'>
+            <button type='submit' className='detail-content__button'>Completar</button>
           </div>
         </Form>
       </Formik>

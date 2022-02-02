@@ -1,9 +1,9 @@
 import Header from '../Header/Index'
 
-export default function Layout ({ children }) {
+export default function Layout ({ children, hideShoppingCart }) {
   return (
     <div>
-      <Header/>
+      <Header hideShoppingCart={hideShoppingCart}/>
       {children}
     </div>
   )

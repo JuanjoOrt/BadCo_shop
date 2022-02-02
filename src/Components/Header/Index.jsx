@@ -12,7 +12,7 @@ import LoginPanel from '../LoginPanel'
 import ShoppingCart from '../ShoppingCart'
 import SideShoppingCart from '../ShoppingCart/SideShoppingCart'
 
-export default function Header () {
+export default function Header ({ hideShoppingCart }) {
   const { user, setSearch } = useContext(GlobalContext)
   const [showSideBar, setShowSideBar] = useState(false)
   const { signIn } = useLogin()
@@ -62,14 +62,14 @@ export default function Header () {
                   </li>
                   {
                     user && <li className='header-desktop__item-right'>
-                      <ShoppingCart />
+                      <ShoppingCart hideShoppingCart={hideShoppingCart}/>
                     </li>
                   }
 
                 </ul>
               </div>
               <div className='header-mobile'>
-                <ShoppingCart />
+                <ShoppingCart hideShoppingCart={hideShoppingCart}/>
                 <IoMenuOutline className='header-menu' onClick={() => setShowSideBar(!showSideBar)}/>
               </div>
             </div>

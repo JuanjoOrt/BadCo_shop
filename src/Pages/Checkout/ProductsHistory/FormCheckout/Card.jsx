@@ -26,7 +26,7 @@ export default function Card () {
       <InputText
         id='cardName'
         name='cardName'
-        onFocus={() => setFocusCard('number')}
+        onFocus={() => setFocusCard('name')}
         onChange={(e) => setCardName(e.target.value)} value={cardName}
       />
       <InputNumber

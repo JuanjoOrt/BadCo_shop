@@ -8,6 +8,11 @@
   margin-top: 1rem;
   margin-left: 2rem;
   width: 65%;
+
+  &__buttonContainer{
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .bottom-form{
