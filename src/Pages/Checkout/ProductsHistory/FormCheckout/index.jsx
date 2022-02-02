@@ -4,18 +4,10 @@ import InputDNI from '../../../../Components/Forms/InputDNI/InputDni'
 import InputPhone from '../../../../Components/Forms/InputPhone/InputPhone'
 import InputNumber from '../../../../Components/Forms/InputNumber/InputNumber'
 import Alert from '../../../../Components/Alert/Alert'
-import 'react-credit-cards/es/styles-compiled.css'
-import Cards from 'react-credit-cards'
-import { useState } from 'react'
 import './styles.scss'
+import Card from './Card'
 
 export default function FormCheckout () {
-  const [focusCard, setFocusCard] = useState('name')
-  const [cardName, setCardName] = useState('')
-  const [cardNumber, setCardNumber] = useState('')
-  const [cardExpiry, setCardExpiry] = useState('')
-  const [cardCVV, setCardCVV] = useState('')
-
   return (
     <div className='form-checkout'>
       <div className='products-history__title'>Información del comprador</div>
@@ -39,48 +31,7 @@ export default function FormCheckout () {
           </div>
           <Alert>Está pagina es un proyecto con fines educativos, por favor, no pongas datos reales.</Alert>
           <div className='bottom-form'>
-            <div className='bottom-form__left'>
-              <Cards
-                cvc={cardCVV}
-                expiry={cardExpiry.replace('/', '')}
-                name={cardName}
-                number={cardNumber}
-                focused={focusCard}
-              />
-            </div>
-            <div className='bottom-form__right'>
-              <InputText
-                id='cardName'
-                name='cardName'
-                onFocus={() => setFocusCard('number')}
-                onChange={(e) => setCardName(e.target.value)} value={cardName}
-              />
-              <InputNumber
-                id='cardNumber'
-                name='cardNumber'
-                format='#### #### #### ####'
-                onFocus={() => setFocusCard('number')}
-                onChange={(e) => setCardNumber(e.target.value)} value={cardNumber}
-              />
-              <div className='flex-two-elements'>
-                <InputNumber
-                  id='cardExpiry'
-                  name='cardExpiry'
-                  format='## / ##'
-                  className='form-dni'
-                  onFocus={() => setFocusCard('expiry')}
-                  onChange={(e) => setCardExpiry(e.target.value)} value={cardExpiry}
-                />
-                <InputNumber
-                  id='cardCVV'
-                  name='cardCVV'
-                  format='###'
-                  className='form-phone'
-                  onFocus={() => setFocusCard('cvc')}
-                  onChange={(e) => setCardCVV(e.target.value)} value={cardCVV}
-                />
-              </div>
-            </div>
+            <Card />
           </div>
         </Form>
       </Formik>
