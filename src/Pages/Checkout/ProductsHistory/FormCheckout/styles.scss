@@ -35,3 +35,29 @@
 .form-phone{
   margin-left: .4rem;
 }
+
+@media (max-width: 1000px) {
+  .form-checkout {
+    width: 90%;
+  }
+  .header-form{
+    width: 90%;
+    margin-left: 1rem;
+
+    &__buttonContainer{
+      padding-bottom: 1rem;
+    }
+  }
+  .bottom-form{
+    flex-direction: column;
+
+    &__left{
+      width: 100%;
+    }
+
+    &__right{
+      margin-top: 1rem;
+      width: 100%;
+    }
+  }
+}
