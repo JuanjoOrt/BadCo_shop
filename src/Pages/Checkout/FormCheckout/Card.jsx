@@ -2,8 +2,8 @@ import 'react-credit-cards/es/styles-compiled.css'
 import Cards from 'react-credit-cards'
 import './styles.scss'
 import { useState } from 'react'
-import InputText from '../../../../Components/Forms/InputText/InputText'
-import InputNumber from '../../../../Components/Forms/InputNumber/InputNumber'
+import InputText from '../../../Components/Forms/InputText/InputText'
+import InputNumber from '../../../Components/Forms/InputNumber/InputNumber'
 
 export default function Card () {
   const [focusCard, setFocusCard] = useState('name')

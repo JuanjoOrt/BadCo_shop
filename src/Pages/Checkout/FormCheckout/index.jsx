@@ -1,21 +1,25 @@
-import InputText from '../../../../Components/Forms/InputText/InputText'
+import InputText from '../../../Components/Forms/InputText/InputText'
 import { Formik, Form } from 'formik'
-import InputDNI from '../../../../Components/Forms/InputDNI/InputDni'
-import InputPhone from '../../../../Components/Forms/InputPhone/InputPhone'
-import InputNumber from '../../../../Components/Forms/InputNumber/InputNumber'
-import { validateDNI, validateEmptyInput } from '../../../../Components/Forms/validations'
-import Alert from '../../../../Components/Alert/Alert'
+import InputDNI from '../../../Components/Forms/InputDNI/InputDni'
+import InputPhone from '../../../Components/Forms/InputPhone/InputPhone'
+import InputNumber from '../../../Components/Forms/InputNumber/InputNumber'
+import { validateDNI, validateEmptyInput } from '../../../Components/Forms/validations'
+import ContextCheckout from '../../../Context/ContextCheckout'
+import Alert from '../../../Components/Alert/Alert'
 import './styles.scss'
 import Card from './Card'
+import { useContext } from 'react'
 
 export default function FormCheckout () {
+  const { setInfo } = useContext(ContextCheckout)
+
   return (
     <div className='form-checkout'>
       <div className='products-history__title'>Información del comprador</div>
       <hr/>
       <Formik
         initialValues={ { name: '', dni: '', address: '', telephone: '', postalCode: '', country: '', cardName: '', cardNumber: '', cardExpiry: '', cardCVV: '' } }
-        onSubmit={(values) => alert(values)}
+        onSubmit={(values) => setInfo(values)}
       >
         <Form>
           <div className='header-form'>
@@ -24,10 +28,10 @@ export default function FormCheckout () {
               <InputDNI id='dni' name='dni' className='margin-bottom form-dni' validate={validateDNI}/>
               <InputPhone id='telephone' name='telephone' className='margin-bottom form-phone'/>
             </div>
-            <InputText id='address' name='address' className='margin-bottom'/>
+            <InputText id='address' name='address' className='margin-bottom' validate={validateEmptyInput}/>
             <div className='flex-two-elements'>
-              <InputNumber id='postalCode' name='postalCode' format="#####" className='margin-bottom form-dni'/>
-              <InputText id='country' name='country' className='margin-bottom form-phone'/>
+              <InputNumber id='postalCode' name='postalCode' format="#####" className='margin-bottom form-dni' validate={validateEmptyInput}/>
+              <InputText id='country' name='country' className='margin-bottom form-phone' validate={validateEmptyInput}/>
             </div>
           </div>
           <Alert>Está pagina es un proyecto con fines educativos, por favor, no pongas datos reales.</Alert>

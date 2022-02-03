@@ -1,4 +1,4 @@
-import Unicorn from '../../../../styles/assets/unicorn.png'
+import Unicorn from '../../../styles/assets/unicorn.png'
 
 export default function EmptyCart () {
   return (
