@@ -2,6 +2,7 @@ import './loginPanel.scss'
 import { BiDownArrow, BiUpArrow } from 'react-icons/bi'
 import { useEffect, useRef, useState } from 'react'
 import { useLogin } from '../../Hooks/useLogin'
+import { Link } from 'react-router-dom'
 
 export default function LoginPanel ({ user }) {
   const ref = useRef(null)
@@ -34,8 +35,8 @@ const Panel = ({ signOut, closePanel, mainRef }) => {
 
   return (
     <div className='login-panel-tab' ref={ref}>
-      {/*<div className='login-panel-tab__item'>Información</div>
-        <div className='login-panel-tab__hr'/>*/}
+      <Link to='/orders'><div className='login-panel-tab__item'>Pedidos</div></Link>
+      <div className='login-panel-tab__hr'/>
       <div className='login-panel-tab__item' onClick={signOut}>Salir</div>
     </div>
   )

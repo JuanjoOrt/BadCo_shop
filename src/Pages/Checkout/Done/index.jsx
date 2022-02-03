@@ -1,19 +1,37 @@
 import { useContext, useEffect } from 'react'
 import ContextCheckout from '../../../Context/ContextCheckout'
+import { pushOrder } from '../../../Services/serviceOrders'
 import ContextCart from '../../../Context/ContextCart'
 import './styles.scss'
 import { DateTime } from 'luxon'
+import GlobalContext from '../../../Context/Context'
+import useShoppingCart from '../../../Hooks/useShoppingCart'
 
 export default function Done () {
-  const { setItems } = useContext(ContextCart)
+  const { getArticlesPrice } = useShoppingCart()
+  const { setItems, items } = useContext(ContextCart)
   const { info, setInfo } = useContext(ContextCheckout)
+  const { user } = useContext(GlobalContext)
   const deliverDate = DateTime.now().plus({ days: 3 })
     .setLocale('es')
     .toFormat("dd 'de 'LLL")
 
-  useEffect(() => () => {
-    setInfo(null)
-    setItems([])
+  const order = {
+    userId: user.googleId,
+    created_date: DateTime.now().toISO(),
+    address: info.address,
+    country: info.country,
+    orders: items,
+    totalPrice: getArticlesPrice()
+  }
+
+  useEffect(() => {
+    console.log('hi')
+    pushOrder(order)
+    return () => {
+      setInfo(null)
+      setItems([])
+    }
   }, [])
 
   return <div className='checkout-done'>
