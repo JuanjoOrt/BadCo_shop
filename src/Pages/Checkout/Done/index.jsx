@@ -15,9 +15,8 @@ export default function Done () {
   const deliverDate = DateTime.now().plus({ days: 3 })
     .setLocale('es')
     .toFormat("dd 'de 'LLL")
-
   const order = {
-    userId: user.googleId,
+    userMail: user.profileObj.email,
     created_date: DateTime.now().toISO(),
     address: info.address,
     country: info.country,
@@ -26,7 +25,6 @@ export default function Done () {
   }
 
   useEffect(() => {
-    console.log('hi')
     pushOrder(order)
     return () => {
       setInfo(null)

@@ -25,7 +25,7 @@ export default function useShoppingCart () {
     items.forEach(item => {
       total = total + (item.price * item.count)
     })
-    return total
+    return Math.round(total)
   }
 
   return { addCart, removeCart, getArticlesPrice }
