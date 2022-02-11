@@ -6,7 +6,7 @@
   "postalCode": "Codigo Postal",
   "city": "Ciudad",
   "country": "País",
-  "cardName": "Nombre",
+  "cardName": "Propietario",
   "cardNumber": "Numero de tarjeta",
   "cardExpiry": "MM/YY",
   "cardCVV": "CVV"

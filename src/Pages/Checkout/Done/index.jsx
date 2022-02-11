@@ -6,6 +6,7 @@ import './styles.scss'
 import { DateTime } from 'luxon'
 import GlobalContext from '../../../Context/Context'
 import useShoppingCart from '../../../Hooks/useShoppingCart'
+import generateStatus from '../../../utils/generateStatus'
 
 export default function Done () {
   const { getArticlesPrice } = useShoppingCart()
@@ -21,7 +22,8 @@ export default function Done () {
     address: info.address,
     country: info.country,
     orders: items,
-    totalPrice: getArticlesPrice()
+    totalPrice: getArticlesPrice(),
+    status: generateStatus()
   }
 
   useEffect(() => {

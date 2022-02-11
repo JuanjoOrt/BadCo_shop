@@ -1,14 +1,10 @@
 import './home.scss'
 import WomanImage from '../../styles/assets/home-woman-model.webp'
+import useChangeBackground from '../../Hooks/useChangeBackground'
 import Layout from '../../Components/Layout'
-import { useEffect } from 'react'
 
 export default function Home () {
-
-  useEffect(() => {
-    document.body.style.background = '#978DD0'
-    return () => { document.body.style.background = '#fff' }
-  }, [])
+  useChangeBackground('#978DD0')
 
   return (
     <Layout>
