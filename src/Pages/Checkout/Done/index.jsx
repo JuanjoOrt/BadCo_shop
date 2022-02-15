@@ -21,7 +21,7 @@ export default function Done () {
     created_date: DateTime.now().toISO(),
     address: info.address,
     country: info.country,
-    orders: items,
+    products: items,
     totalPrice: getArticlesPrice(),
     status: generateStatus()
   }

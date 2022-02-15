@@ -1,0 +1,16 @@
+
+.orders-history{
+  width: 50%;
+  margin: 10rem auto;
+
+  &__title{
+    font-family: 'Roboto-Bold', sans-serif;
+    font-size: 36px;
+  }
+
+  &__body{
+    background: tomato;
+    width: 100%;
+    margin-top: .2rem;
+  }
+}
