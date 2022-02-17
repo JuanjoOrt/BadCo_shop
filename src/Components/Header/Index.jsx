@@ -12,7 +12,7 @@ import LoginPanel from '../LoginPanel'
 import ShoppingCart from '../ShoppingCart'
 import SideShoppingCart from '../ShoppingCart/SideShoppingCart'
 
-export default function Header ({ hideShoppingCart }) {
+export default function Header ({ hideShoppingCart, controllScroll = false }) {
   const { user, setSearch } = useContext(GlobalContext)
   const [showSideBar, setShowSideBar] = useState(false)
   const { signIn } = useLogin()
@@ -33,7 +33,7 @@ export default function Header ({ hideShoppingCart }) {
     <>
       <div className={ `header ${classScrolled}` }>
         {
-          isScrolled
+          isScrolled && controllScroll
             ? <div className='header-container'>
                 <div className='header-logo'>
                   <div onClick={scrollToTop} className='cursor'>BAD CO.</div>

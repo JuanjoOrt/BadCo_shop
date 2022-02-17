@@ -8,7 +8,7 @@ export default function Products () {
   const { data, isLoading } = useGetProducts()
 
   return (
-      <Layout>
+      <Layout controllScroll>
         <div className='products-container'>
           {
             isLoading

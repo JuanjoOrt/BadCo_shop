@@ -78,7 +78,7 @@
     display: flex;
 
     &.show {
-      height: 22rem;
+      min-height: 22rem;
       transform: scaleY(1);
       opacity: 1;
       transform-origin: top;
@@ -101,10 +101,10 @@
     }
 
     &__right {
-      padding: 2rem 1rem;
+      padding: 2rem 1rem 4rem 1rem;
       box-sizing: border-box;
       width: 50%;
-      height: 90%;
+      min-height: 70%;
       font-family: Roboto-Regular, 'sans-serif';
       font-size: 18px;
       display: flex;
