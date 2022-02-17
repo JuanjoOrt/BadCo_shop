@@ -4,21 +4,21 @@ import { IoCloseSharp } from 'react-icons/io5'
 import ContextCart from '../../../Context/ContextCart'
 import ItemCart from './ItemCart'
 import EmptyCart from '../../EmptyCart'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import GlobalContext from '../../../Context/Context'
 
 export default function SideShoppingCart () {
   const { visible, setVisible, addButtonRef, items } = useContext(ContextCart)
   const { user } = useContext(GlobalContext)
   const classVisible = visible ? 'show' : ''
-  const navigate = useNavigate()
+  const history = useHistory()
   const emptyCart = items.length === 0
   const ref = useRef()
 
   const closeModal = () => setVisible(false)
 
   const handleSubmit = () => {
-    navigate('/checkout')
+    history.push('/checkout')
     setVisible(false)
   }
 

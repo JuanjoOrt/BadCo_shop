@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import './styles/index.scss'
 import OrdersHistory from './Pages/OrdersHistory'
 import Checkout from './Pages/Checkout'
@@ -11,16 +11,16 @@ import Home from './Pages/Home'
 
 function App () {
   return (
-		<Routes>
-			<Route path="/" element={<Home />} />
-			<Route path="/about" element={<About />} />
-			<Route path="/detail/:id" element={<Detail />} />
-			<Route path="/login" element={<Login />} />
-			<Route path="/products" element={<Products />} />
-			<Route path="/checkout" element={<Checkout />} />
-			<Route path="/orders" element={<OrdersHistory />} />
-			<Route path="*" element={<NotFound />} />
-		</Routes>
+		<Switch>
+			<Route exact path="/" component={Home} />
+			<Route exact path="/about" component={About} />
+			<Route exact path="/detail/:id" component={Detail} />
+			<Route exact path="/login" component={Login} />
+			<Route exact path="/products" component={Products} />
+			<Route exact path="/checkout" component={Checkout} />
+			<Route exact path="/orders" component={OrdersHistory} />
+			<Route component={NotFound} />
+		</Switch>
   )
 }
 
