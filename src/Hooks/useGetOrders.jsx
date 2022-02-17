@@ -6,7 +6,7 @@ import GlobalContext from '../Context/Context'
 export default function useGetOrders () {
   const { data, isLoading, isFetching } = useQuery('ordersList', getOrders)
   const { user } = useContext(GlobalContext)
-  const [orders, setOrders] = useState([])
+  const [orders, setOrders] = useState()
 
   useEffect(() => {
     if (data && user) {
