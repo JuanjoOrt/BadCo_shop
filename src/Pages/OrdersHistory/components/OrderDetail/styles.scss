@@ -1,0 +1,132 @@
+
+.order-detail{
+  margin-top: .7rem;
+  background: white;
+  border: 1px solid #EAEAEA;
+  border-radius: 5px;
+  box-shadow: 0 0 9px -6px rgba(0,0,0,0.75);
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+
+  &-header {
+    display: flex;
+    &__image {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      div {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        background: #e8e8e8;
+        border-radius: 5px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+    &__info{
+      width: calc(100% - 80px);
+      display: flex;
+      justify-content: space-between;
+
+      &-title{
+        font-family: 'Roboto-Regular', sans-serif;
+        width: calc(100% - 4rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: .5rem;
+
+        &-date{
+          font-size: 18px;
+        }
+
+        &-price{
+          margin-top: 2px;
+          font-size: 15px;
+        }
+      }
+
+      &-icon{
+        width: 4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg{
+          font-size: 24px;
+        }
+
+        div {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &-body{
+    transition: opacity .2s;
+    display: flex;
+
+    &.show {
+      height: 22rem;
+      transform: scaleY(1);
+      opacity: 1;
+      transform-origin: top;
+    }
+    &.hide {
+      height: 0;
+      opacity: 0;
+      transform: scaleY(0);
+      border-color: #d8e5e9;
+    }
+
+    &__left {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+    }
+
+    &__right {
+      padding: 2rem 1rem;
+      box-sizing: border-box;
+      width: 50%;
+      height: 100%;
+      font-family: Roboto-Regular, 'sans-serif';
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &-details{
+        display: flex;
+        flex-direction: column;
+      }
+
+      &-price{
+        font-family: 'Roboto-Bold', sans-serif;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .order-detail-body{
+    flex-direction: column;
+    &__left{width: 100%}
+    &__right{width: 100%}
+  }
+}

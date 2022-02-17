@@ -1,0 +1,27 @@
+
+.sphere-status{
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background: #E9E9E9;
+
+  &.done{
+    background: #0066FF;
+  }
+
+  &.actual{
+    background: #0066FF;
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 1.2rem;
+      height: 1.2rem;
+      background: white;
+      top: 3px;
+      left: 3px;
+      border-radius: 15px;
+    }
+  }
+}
