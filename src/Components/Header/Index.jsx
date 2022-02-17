@@ -60,11 +60,9 @@ export default function Header ({ hideShoppingCart, controllScroll = false }) {
                       ? <LoginPanel user={user.profileObj.name} />
                       : <div onClick={signIn} className="cursor">Login</div>}
                   </li>
-                  {
-                    user && <li className='header-desktop__item-right'>
+                  <li className='header-desktop__item-right'>
                       <ShoppingCart hideShoppingCart={hideShoppingCart}/>
                     </li>
-                  }
 
                 </ul>
               </div>
