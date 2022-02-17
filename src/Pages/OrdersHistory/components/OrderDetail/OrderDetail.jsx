@@ -13,7 +13,7 @@ export default function OrderDetail ({ order }) {
 
   return (
     <div className='order-detail'>
-      <div className='order-detail-header'>
+      <div className='order-detail-header' onClick={() => setShow(!show)}>
         <div className='order-detail-header__image'>
           <div>
             <img src={order.products[0].image} alt='imagen de pedido'/>
@@ -25,7 +25,7 @@ export default function OrderDetail ({ order }) {
             <span className='order-detail-header__info-title-price'>Total: {order.totalPrice} €</span>
           </div>
           <div className='order-detail-header__info-icon'>
-            <div onClick={() => setShow(!show)}>
+            <div>
               {show ? <IoIosArrowUp /> : <IoIosArrowDown/>}
             </div>
           </div>

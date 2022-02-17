@@ -10,6 +10,7 @@
   flex-direction: column;
 
   &-header {
+    cursor: pointer;
     display: flex;
     &__image {
       width: 80px;
