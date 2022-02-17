@@ -8,7 +8,7 @@ import SideBar from '../SideBar'
 import { useLogin } from '../../Hooks/useLogin'
 import UseIsScrolled from '../../Hooks/useIsScrolled'
 import useSearch from '../../Hooks/useSearch'
-import LoginPanel from '../LoginPanel'
+import LoginPanel from '../LoginPanel/Index'
 import ShoppingCart from '../ShoppingCart'
 import SideShoppingCart from '../ShoppingCart/SideShoppingCart'
 
