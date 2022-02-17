@@ -6,14 +6,27 @@ import OrderDetail from './components/OrderDetail/OrderDetail'
 
 export default function OrdersHistory () {
   useChangeBackground('#FBFBFB')
-  const { orders } = useGetOrders()
+  const { orders, isLoading, isFetching } = useGetOrders()
+  const emptyOrders = orders?.length === 0
+
+  if (isLoading || isFetching) {
+    return <Layout />
+  }
+
   return (
     <Layout>
       <div className='orders-history'>
-        <div className='orders-history__title'>Historial de pedidos</div>
-        <div className='orders-history__body'>
-          {orders.map(order => <OrderDetail key={order.id} order={order}/>)}
-        </div>
+        {
+          emptyOrders
+            ? <div className='orders-history__title'>No hay pedidos realizados...</div>
+            : <>
+                <div className='orders-history__title'>Historial de pedidos</div>
+                <div className='orders-history__body'>
+                  {orders.map(order => <OrderDetail key={order.id} order={order}/>)}
+                </div>
+              </>
+        }
+
       </div>
     </Layout>
   )

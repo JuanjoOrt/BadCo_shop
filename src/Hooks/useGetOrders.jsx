@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 import GlobalContext from '../Context/Context'
 
 export default function useGetOrders () {
-  const { data } = useQuery('ordersList', getOrders)
+  const { data, isLoading, isFetching } = useQuery('ordersList', getOrders)
   const { user } = useContext(GlobalContext)
   const [orders, setOrders] = useState([])
 
@@ -14,5 +14,5 @@ export default function useGetOrders () {
     }
   }, [data, user])
 
-  return { orders }
+  return { orders, isLoading, isFetching }
 }

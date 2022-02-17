@@ -33,7 +33,7 @@ export default function OrderDetail ({ order }) {
       </div>
       <div className={`order-detail-body ${classShow}`}>
         <div className='order-detail-body__left'>
-          <OrderStatus status={order.status}/>
+          <OrderStatus status={order.status} date={order.created_date}/>
         </div>
         <div className='order-detail-body__right'>
           <div className='order-detail-body__right-details'>

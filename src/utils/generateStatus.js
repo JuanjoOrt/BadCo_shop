@@ -1,4 +1,4 @@
 
 export default function generateStatus () {
-  return Math.floor(Math.random() * 4 + 1)
+  return Math.floor(Math.random() * 3 + 1)
 }

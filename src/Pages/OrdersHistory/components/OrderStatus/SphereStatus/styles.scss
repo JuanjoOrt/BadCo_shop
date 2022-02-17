@@ -1,27 +1,50 @@
 
-.sphere-status{
+.sphere {
+  position: relative;
+  height: 100%;
   width: 25px;
-  height: 25px;
-  border-radius: 15px;
-  background: #E9E9E9;
+  &-status{
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background: #E9E9E9;
+    position: absolute;
+    z-index: 2;
 
-  &.done{
-    background: #0066FF;
+    &.done{
+      background: #115dcf;
+    }
+
+    &.actual{
+      background: #115dcf;
+
+      &::after{
+        content: '';
+        position: absolute;
+        width: 1.2rem;
+        height: 1.2rem;
+        background: white;
+        top: 2.5px;
+        left: 3px;
+        border-radius: 15px;
+      }
+    }
   }
 
-  &.actual{
-    background: #0066FF;
-    position: relative;
+  &-line{
+    width: 8px;
+    height: 100%;
+    transform: translateY(1px);
+    position: absolute;
+    left: 34%;
+    background: #E9E9E9;
 
-    &::after{
-      content: '';
-      position: absolute;
-      width: 1.2rem;
-      height: 1.2rem;
-      background: white;
-      top: 3px;
-      left: 3px;
-      border-radius: 15px;
+    &.actual{
+      background: #0864ed;
+    }
+    &.done{
+      background: #0864ed;
     }
   }
 }
+

@@ -1,0 +1,18 @@
+
+.status-row{
+  width: 160px;
+  height: 70px;
+  display: flex;
+
+  &__details{
+    display: flex;
+    flex-direction: column;
+    padding-left: .3rem;
+    padding-top: .3rem;
+    font-family: Roboto-Regular, 'sans-serif';
+
+    &-date{
+      font-size: 14px;
+    }
+  }
+}

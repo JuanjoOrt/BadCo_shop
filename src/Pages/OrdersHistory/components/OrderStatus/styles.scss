@@ -2,5 +2,8 @@
 .order-status{
   height: 100%;
   width: 17rem;
-  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
