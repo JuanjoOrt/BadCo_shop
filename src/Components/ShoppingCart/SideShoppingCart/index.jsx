@@ -5,9 +5,11 @@ import ContextCart from '../../../Context/ContextCart'
 import ItemCart from './ItemCart'
 import EmptyCart from '../../EmptyCart'
 import { useNavigate } from 'react-router-dom'
+import GlobalContext from '../../../Context/Context'
 
 export default function SideShoppingCart () {
   const { visible, setVisible, addButtonRef, items } = useContext(ContextCart)
+  const { user } = useContext(GlobalContext)
   const classVisible = visible ? 'show' : ''
   const navigate = useNavigate()
   const emptyCart = items.length === 0
@@ -37,7 +39,7 @@ export default function SideShoppingCart () {
         {emptyCart && <EmptyCart />}
       </div>
       <div className='side-shopping-cart__bottom'>
-        {!emptyCart && <button onClick={handleSubmit}>Tramitar pedido</button>}
+        {!emptyCart && user && <button onClick={handleSubmit}>Tramitar pedido</button>}
       </div>
     </div>
   )
