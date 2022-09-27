@@ -1,0 +1,15 @@
+*.css
+*.scss
+*.woff
+*.otf
+*.svg
+*.ico
+*.ttf
+*.txt
+*.png
+*.webp
+node_modules
+public
+bin
+build
+cypress
